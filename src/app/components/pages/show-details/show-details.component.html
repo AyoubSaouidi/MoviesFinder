@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="details-container">
+        <div class="infos-container">
+            <div class="banner-fade"></div>
+            <img [src]="show.banner !== null ? show.banner : 'assests/images/Salage_BG.jpg'" alt="Show banner" class="banner-img" />
+            <div class="show-infos">
+                <div class="poster-container">
+                    <img [src]="show.image_url !== null ? show.image_url : 'assests/images/Salage_BG.jpg'" alt="Show banner" class="poster-img" />
+                    <div class="poster-footer">
+                        <div class="poster-icon-group" [title]="'Rating: '+ show.rating ">
+                            <p class="poster-rating-text">{{show.rating}}</p>
+                            <fa-icon [icon]="ratingIcon" class="poster-icon rating-icon"></fa-icon>
+                        </div>
+                        <div class="poster-icon-group" [title]="'Duration: '+ show.movie_length ">
+                            <p class="poster-duration-text">{{formatDuration(show.movie_length)}}</p>
+                            <fa-icon [icon]="durationIcon" class="poster-icon duration-icon"></fa-icon>
+                        </div>
+                    </div>
+                    <h2 class="poster-title">{{show.title}}</h2>
+                    <a href="{{show.trailer}}" target="_blank" rel="noopener noreferrer" class="btn btn-warning">TRAILER</a>
+                    <a href="#redirect" target="_blank" rel="noopener noreferrer" class="btn btn-blue">WATCH NOW</a>
+                </div>
+                <div class="infos-details">
+                    <h3 class="details-header">Description</h3>
+                    <p class="details-text">{{show.description}}</p>
+                    <p class="tagged-text blue"> <strong class="infos-tag">RELEASE</strong> <span>{{show.release}}</span></p>
+                    <p class="tagged-text blue"> <strong class="infos-tag">STARTED</strong> <span>{{ showType==='series' ? show.start_year : show.year}}</span></p>
+                    <p *ngIf="showType === 'series' && show.end_year" class="tagged-text blue"> <strong class="infos-tag">ENDED</strong><span>{{show.end_year}}</span></p>
+                    <p *ngIf="showType === 'series'" class="tagged-text blue"> <strong class="infos-tag">STATE</strong><span [ngStyle]="{'color': show.end_year ? 'var(--danger)' : 'var(--warning)'}">{{show.end_year !== 0 ? 'Finished' : 'Streaming'}}</span></p>
+                    <p class="tagged-text blue"> <strong class="infos-tag">GENRE</strong> <span class="text-tag" *ngFor="let genre of show.gen">{{genre.genre}}</span></p>
+                </div>
+            </div>
+            <div class="actors-section">
+                <h3 class="details-header">Actors</h3>
+                <div class="actors-container">
+                    <div *ngFor="let actor of [{name: 'Name Here', image_url: 'assets/images/Salad_BG.jpg'},{name: 'Name Here', image_url: 'assets/images/Salad_BG.jpg'},{name: 'Name Here', image_url: 'assets/images/Salad_BG.jpg'}]" class="actor-card">
+                        <img [src]="actor.image_url !== null ? actor.image_url : 'assests/images/Salage_BG.jpg'" alt="Actor" class="actor-img" />
+                        <p class="actor-text">{{actor.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

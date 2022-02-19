@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="main-container">
+        <header>
+            <h2>Find your show</h2>
+            <app-search (onSearch)="searchMovies($event)"></app-search>
+        </header>
+    </div>
+    <!-- Movies -->
+    <app-spinner *ngIf="isLoading()"></app-spinner>
+    <p *ngIf="notFound()" class="alert">Show Not Found</p>
+    <app-movies *ngIf="canDisplay()" [movies]="searchType === 'movie' ? (isFilteredMovies() ? filteredMovies : movies) : (isFilteredSeries() ? filteredSeries : series)"></app-movies>
+</div>

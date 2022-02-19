@@ -1,1 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    /* Basic */
+    --light: #fff;
+    --dark: #000;
+    /* Grey */
+    --light-grey: #939393;
+    --dark-grey: #232323;
+    /* Success - Danger - Warning */
+    --success: #23a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    /* Main Color */
+    --primary: #364f6b;
+    --secondary: #3fc1c9;
+}
+
+body {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    /* height: fit-content;
+    min-height: 100vh; */
+    background-color: var(--light);
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-grey);
+    box-shadow: 0 2px 12px 0 rgba(47, 47, 47, 0.15);
+}
+
+.container,
+.main-container,
+.nav-container,
+.details-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+}
+
+.nav-container {
+    height: 70px;
+    padding-inline: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-grey);
+}
+
+.nav-brand {
+    width: fit-content;
+    min-width: 220px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--secondary);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 260ms;
+}
+
+.nav-brand:hover {
+    color: var(--light-grey);
+}
+
+.nav-brand-icon {
+    padding: 2px;
+    font-size: 30px;
+    font-weight: 900;
+    border: 3px solid var(--secondary);
+    border-radius: 50%;
+    transition: 260ms;
+}
+
+.nav-brand:hover .nav-brand-icon {
+    border-color: var(--light-grey);
+    padding: 1px;
+    border-width: 1px;
+    transform: scale(1.1);
+}
+
+.nav-list {
+    width: fit-content;
+    min-width: 155px;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item-link {
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--light-grey);
+    background-color: transparent;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: 200ms ease-in;
+}
+
+.nav-item-link:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+    opacity: 0.65;
+}
+
+
+/*  Home  */
+
+.container {
+    max-width: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.alert {
+    width: fit-content;
+    min-width: 350px;
+    margin-block: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 1px solid var(--danger);
+    background-color: #dc354677;
+    color: var(--danger);
+    text-align: center;
+}

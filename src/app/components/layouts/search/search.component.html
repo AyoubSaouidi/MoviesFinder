@@ -1,0 +1,16 @@
+<form class="search-form" (ngSubmit)="onSubmit()">
+    <div class="search-radio-group">
+        <div class="radio-control">
+            <label for="movie">Movie</label>
+            <input type="radio" name="type" id="movie" [(ngModel)]="type" value="movie" (ngModelChange)="onChangeRadio()" />
+        </div>
+        <div class="radio-control">
+            <label for="series">Series</label>
+            <input type="radio" name="type" id="series" [(ngModel)]="type" value="series" (ngModelChange)="onChangeRadio()" />
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" name="title" id="title" class="search-control" [(ngModel)]="title" placeholder="Search a show" (ngModelChange)="onEmpty()" />
+        <button type="submit" class="search-btn"><fa-icon [icon]="icon" class="search-icon"></fa-icon></button>
+    </div>
+</form>

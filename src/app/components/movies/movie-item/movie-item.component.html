@@ -1,0 +1,27 @@
+<a class="movie-card figure" [routerLink]="['/shows', movie.type,movie.imdb_id]" [state]="{show: movie}" [title]="'Movie -- ' + movie.title">
+    <div class="card-fade"></div>
+    <img [src]="movie.image_url !== null ? movie.image_url : 'assests/images/Salage_BG.jpg'" alt="Show banner" class="movie-card-img" />
+    <div class="movie-card-body">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{movie.title}}
+            </h3>
+            <div class="round-bubble" [title]="'Popalarity: '+movie.popularity">
+                <p>
+                    {{movie.popularity}}
+                </p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="icon-group" [title]="'Rating: '+ movie.rating ">
+                <p class="rating-text">{{movie.rating}}</p>
+                <fa-icon [icon]="ratingIcon" class="card-icon rating-icon"></fa-icon>
+            </div>
+            <div class="icon-group" [title]="'Duration: '+ movie.movie_length ">
+                <p class="duration-text">{{formatDuration(movie.movie_length)}}</p>
+                <fa-icon [icon]="durationIcon" class="card-icon duration-icon"></fa-icon>
+            </div>
+        </div>
+
+    </div>
+</a>

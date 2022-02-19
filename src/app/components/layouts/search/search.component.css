@@ -1,0 +1,111 @@
+.search-form {
+    width: fit-content;
+    min-width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-radio-group {
+    width: fit-content;
+    min-width: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 0px;
+}
+
+.radio-control {
+    margin-right: 10px;
+}
+
+.radio-control label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-right: 5px;
+}
+
+.search-container {
+    width: fit-content;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.search-control {
+    width: calc(100% - 34px);
+    height: 34px;
+    padding-inline: 10px;
+    border: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: var(--dark-grey);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--light);
+    transition: 160ms ease-in-out;
+}
+
+.search-control:hover,
+.search-control:focus {
+    background-color: var(--dark-grey);
+    color: var(--secondary);
+}
+
+.search-control::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--light);
+    opacity: 0.6;
+}
+
+.search-btn {
+    width: 34px;
+    height: 34px;
+    background-color: var(--dark-grey);
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    transition: 160ms ease-in;
+}
+
+.search-btn:hover {
+    background-color: var(--dark-grey);
+}
+
+.search-icon {
+    font-size: 16px;
+    font-weight: 400;
+    transition: 160ms ease-in;
+    color: #c3c3c3;
+}
+
+.search-btn:hover .search-icon {
+    color: var(--secondary);
+}
+
+@media screen and (max-width: 680px) {
+    .search-form {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .search-radio-group {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+    .search-container {
+        width: fit-content;
+        min-width: 350px;
+    }
+}

@@ -1,0 +1,13 @@
+.spinner-container {
+    width: 100%;
+    height: fit-content;
+    min-height: calc(100vh - 80px - 60px - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 240px;
+    height: 240px;
+}
