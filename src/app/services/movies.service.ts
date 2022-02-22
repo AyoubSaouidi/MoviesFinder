@@ -21,7 +21,7 @@ interface MovieResponse {
 const options = {
   headers: new HttpHeaders({
     'x-rapidapi-host': 'data-imdb1.p.rapidapi.com',
-    'x-rapidapi-key': 'f166e88084msh987fef683622ed4p11c631jsn06408333a43f',
+    'x-rapidapi-key': '-- API KEY HERE --',
   }),
 };
 
